@@ -16,3 +16,9 @@ puts "Saya memiliki angka antara 1 - 100."
 puts "Dapatkah Anda menebaknya?"
 target = rand(100) + 1
 puts "(kunci: #{target})"
+
+# Hitung berapa kali tebakan
+coba = 0
+
+# Apakah tebakan sudah benar
+tertebak = false
