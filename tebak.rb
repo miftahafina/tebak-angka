@@ -23,18 +23,34 @@ coba = 0
 # Apakah tebakan sudah benar
 tertebak = false
 
-# Pemain menebak
-print "Tebakan saya: "
+# Batas menebak
+batas = 10
 
-input_tebakan = gets
-tebakan = input_tebakan.to_i
-puts "#{input_tebakan}"
+# Perulangan kesempatan menebak jika masih salah dan percobaan < 10
+while coba < batas && tertebak == false
 
-# Pengecekan tebakan dengan target
-if tebakan > target
-    puts "Tebakan Anda terlalu TINGGI."
-elsif tebakan < target
-    puts "Tebakan Anda terlalu RENDAH."
-elsif tebakan == target
-    puts "Selamat, #{nama}! Tebakan Anda benar setelah #{coba} kali menebak."
+    # Pemain menebak
+    print "Tebakan saya: "
+
+    input_tebakan = gets
+    tebakan = input_tebakan.to_i
+    puts "#{input_tebakan}"
+
+    # Percobaan bertambah
+    coba += 1
+
+    # Pengecekan tebakan dengan target
+    if tebakan > target
+        puts "Tebakan Anda terlalu TINGGI."
+    elsif tebakan < target
+        puts "Tebakan Anda terlalu RENDAH."
+    elsif tebakan == target
+        puts "Selamat, #{nama}! Tebakan Anda benar setelah #{coba} kali menebak."
+        tertebak = true
+    end
+end
+
+# Jika tidak berhasil menebak
+unless tertebak
+    puts "Maaf, tebakan Anda salah. Angka yang benar adalah #{target}."
 end
