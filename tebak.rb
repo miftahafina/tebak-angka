@@ -42,8 +42,10 @@ while coba < batas && tertebak == false
     # Pengecekan tebakan dengan target
     if tebakan > target
         puts "Tebakan Anda terlalu TINGGI."
+        puts "Sisa kesempatan #{batas - coba}"
     elsif tebakan < target
         puts "Tebakan Anda terlalu RENDAH."
+        puts "Sisa kesempatan #{batas - coba}"
     elsif tebakan == target
         puts "Selamat, #{nama}! Tebakan Anda benar setelah #{coba} kali menebak."
         tertebak = true
